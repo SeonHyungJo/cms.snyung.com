@@ -171,6 +171,10 @@ pre > code {
   counter-reset: line;
 }
 
+pre code span {
+  color: #24292e !important;
+}
+
 /* Code line */
 [data-line] {
   padding: 0 1rem;
@@ -320,4 +324,3 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
 .cm-editor .cm-line {
   padding: 0 1rem;
 }
-
