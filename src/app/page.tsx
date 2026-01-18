@@ -29,48 +29,54 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <main className="flex-1 flex flex-col items-center justify-center px-4">
-        <div className="flex flex-col items-center gap-8 max-w-2xl text-center">
-          <div className="flex items-center gap-3">
-            <FolderOpen className="w-12 h-12 text-primary" />
-            <h1 className="text-4xl font-bold">Drive MDX CMS</h1>
-          </div>
+        <article className="flex flex-col items-center gap-8 max-w-2xl text-center">
+          <header className="flex flex-col items-center gap-4">
+            <div className="flex items-center gap-3">
+              <FolderOpen className="w-12 h-12 text-primary" aria-hidden="true" />
+              <h1 className="text-4xl font-bold">Drive MDX CMS</h1>
+            </div>
+            <p className="text-xl text-muted-foreground">
+              DB 비용 없이 Google Drive를 백엔드로 사용하는 블로그 CMS.
+              <br />
+              VS Code와 동일한 Monaco Editor로 MDX를 편집하세요.
+            </p>
+          </header>
 
-          <p className="text-xl text-muted-foreground">
-            Google Drive를 기반으로 한 콘텐츠 관리 시스템입니다.
-            <br />
-            Markdown 파일을 편집하고 바로 저장할 수 있습니다.
-          </p>
-
-          <div className="flex flex-col gap-4 sm:flex-row">
+          <nav aria-label="시작하기">
             <Link href="/auth/signin">
               <Button size="lg" className="flex items-center gap-2">
-                시작하기
-                <ArrowRight className="w-4 h-4" />
+                무료로 시작하기
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Button>
             </Link>
-          </div>
+          </nav>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
-            <div className="p-6 rounded-lg border bg-card">
-              <h3 className="font-semibold mb-2">Google Drive 연동</h3>
-              <p className="text-sm text-muted-foreground">
-                본인의 Google Drive에 파일을 직접 편집하고 저장합니다.
-              </p>
-            </div>
-            <div className="p-6 rounded-lg border bg-card">
-              <h3 className="font-semibold mb-2">안전한 접근</h3>
-              <p className="text-sm text-muted-foreground">
-                앱이 생성한 파일에만 접근하여 개인정보를 보호합니다.
-              </p>
-            </div>
-            <div className="p-6 rounded-lg border bg-card">
-              <h3 className="font-semibold mb-2">Monaco Editor</h3>
-              <p className="text-sm text-muted-foreground">
-                VS Code와 동일한 에디터로 편안하게 작성합니다.
-              </p>
-            </div>
-          </div>
-        </div>
+          <section aria-labelledby="features-heading" className="mt-8">
+            <h2 id="features-heading" className="sr-only">
+              주요 기능
+            </h2>
+            <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6 list-none p-0">
+              <li className="p-6 rounded-lg border bg-card">
+                <h3 className="font-semibold mb-2">Google Drive 연동</h3>
+                <p className="text-sm text-muted-foreground">
+                  별도 DB 없이 월 $0로 블로그 운영. 15GB 무료 저장 공간 활용.
+                </p>
+              </li>
+              <li className="p-6 rounded-lg border bg-card">
+                <h3 className="font-semibold mb-2">안전한 인증</h3>
+                <p className="text-sm text-muted-foreground">
+                  NextAuth.js + Google OAuth로 내 드라이브만 안전하게 접근.
+                </p>
+              </li>
+              <li className="p-6 rounded-lg border bg-card">
+                <h3 className="font-semibold mb-2">Monaco Editor</h3>
+                <p className="text-sm text-muted-foreground">
+                  VS Code 편집 경험 그대로. 코드 하이라이팅, 자동완성 지원.
+                </p>
+              </li>
+            </ul>
+          </section>
+        </article>
       </main>
 
       <Footer />
